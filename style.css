@@ -24,7 +24,7 @@ img {
 .header {
     display: flex;
     align-items: center;
-    min-width: 80vh; /*posible cambio por el tamaño de la imagen  36:29*/
+    min-height: 80vh; /*posible cambio por el tamaño de la imagen  36:29*/
     background-color: #f5f5f5;
     padding: 70px 0;
 }
@@ -432,13 +432,5 @@ th, td {
         flex-direction: column;
         text-align: center;
     }
-
-
-
-
-
-
-
-
 
 }
