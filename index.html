@@ -38,8 +38,9 @@
                                 </thead>
                                 <tbody></tbody>
                             </table>
-                            <a href="#" id="vaciar-carrito" class="btn-2">vaciar carrito</a>
-                            
+                            <p id="total-carrito">Total: $0</p>
+                            <a href="#" id="vaciar-carrito" class="btn-2">Vaciar carrito</a>
+                            <a href="#" id="pagar-carrito" class="btn-2">Pagar</a>
                         </div>
 
                     </li>
@@ -92,105 +93,47 @@
     </section>
 
     <main class="products container" id="lista-1">
-        <h2>productos - menu </h2>
+        <h2>Productos - Menú</h2>
         <div class="product-content">
+            <!-- Producto Pepperoni -->
             <div class="product">
                 <img src="img/pepperoni.webp" alt="producto1">
                 <div class="product-txt">
-                    <h3>pepperoni</h3>
-                    <p>calidad premium</p>
+                    <h3>Pepperoni</h3>
+                    <p>Calidad premium</p>
                     <p class="precio">$100</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="1">agregar al carrito</a>
-                    
+                    <button class="open-modal btn-2" data-id="1">Seleccionar</button>
                 </div>
-
             </div>
+            <!-- Repite para los demás productos, cambiando el data-id -->
+            <!-- Ejemplo para Hawaiana -->
             <div class="product">
-                <img src="img/hawaiana.webp" alt="producto1">
+                <img src="img/hawaiana.webp" alt="producto2">
                 <div class="product-txt">
-                    <h3>hawayana</h3>
-                    <p>calidad premium</p>
+                    <h3>Hawaiana</h3>
+                    <p>Calidad premium</p>
                     <p class="precio">$100</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="2">agregar al carrito</a>
-                    
+                    <button class="open-modal btn-2" data-id="2">Seleccionar</button>
                 </div>
-
             </div>
-            <div class="product">
-                <img src="img/Mozzarella.webp" alt="producto1">
-                <div class="product-txt">
-                    <h3>mozzarella</h3>
-                    <p>calidad premium</p>
-                    <p class="precio">$10</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="3">agregar al carrito</a>
-                </div>
-            </div>   
-            <div class="product">
-                <img src="img/napolitana.webp" alt="producto1">
-                <div class="product-txt">
-                    <h3>napolitana</h3>
-                    <p>calidad premium</p>
-                    <p class="precio">$100</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="3">agregar al carrito</a>
-                </div>
-            </div>   
-            <div class="product">
-                <img src="img/fugazzeta.webp" alt="producto1">
-                <div class="product-txt">
-                    <h3>fugazzeta</h3>
-                    <p>calidad premium</p>
-                    <p class="precio">$100</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="3">agregar al carrito</a>
-                </div>
-            </div>   
-            <div class="product">
-                <img src="img/rossini.webp" alt="producto1">
-                <div class="product-txt">
-                    <h3>rossini</h3>
-                    <p>calidad premium</p>
-                    <p class="precio">$100</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="3">agregar al carrito</a>
-                </div>
-            </div>   
-            <div class="product">
-                <img src="img/champiñones.webp" alt="producto1">
-                <div class="product-txt">
-                    <h3>champiñones</h3>
-                    <p>calidad premium</p>
-                    <p class="precio">$100</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="3">agregar al carrito</a>
-                </div>
-            </div>   
-            <div class="product">
-                <img src="img/charque.webp" alt="producto1">
-                <div class="product-txt">
-                    <h3>charque</h3>
-                    <p>calidad premium</p>
-                    <p class="precio">$100</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="3">agregar al carrito</a>
-                </div>
-            </div>   
-            <div class="product">
-                <img src="img/pestoypollo.webp" alt="producto1">
-                <div class="product-txt">
-                    <h3>pesto y pollo</h3>
-                    <p>calidad premium</p>
-                    <p class="precio">$100</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="3">agregar al carrito</a>
-                </div>
-            </div>   
-            <div class="product">
-                <img src="img/strogonoff.webp" alt="producto1">
-                <div class="product-txt">
-                    <h3>strogonoff</h3>
-                    <p>calidad premium</p>
-                    <p class="precio">$100</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="3">agregar al carrito</a>
-                </div>
-            </div>   
-
+            <!-- Continúa con los demás productos -->
         </div>
-
+    
+        <!-- Modal (se rellenará dinámicamente con JS) -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3 id="modal-title"></h3>
+                <img id="modal-image" src="" alt="">
+                <p>Selecciona el tamaño:</p>
+                <select id="modal-size">
+                    <option value="pequeño" data-price="80">Pequeño - $80</option>
+                    <option value="mediano" data-price="100">Mediano - $100</option>
+                    <option value="grande" data-price="120">Grande - $120</option>
+                </select>
+                <button id="add-to-cart" class="btn-2">Agregar al carrito</button>
+            </div>
+        </div>
     </main>
     <section class="blog container">
         <div class="blog-1">

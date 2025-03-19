@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- Reusa tu CSS -->
+    <title>Pago - Pizzeria</title>
+    <style>
+        .pago-container {
+            text-align: center;
+            padding: 50px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .pago-container img {
+            max-width: 300px; /* Tamaño máximo en pantallas grandes */
+            width: 100%; /* Hace que la imagen sea responsive */
+            margin-bottom: 20px;
+        }
+        .pago-container p {
+            font-size: 20px;
+            color: #111111;
+            font-family: 'Poppins', sans-serif;
+        }
+        .monto {
+            font-weight: bold;
+            font-size: 24px;
+            color: #111111;
+        }
+
+        /* Media Queries para ajustar el tamaño en pantallas más pequeñas */
+        @media (max-width: 768px) { /* Tablets y pantallas medianas */
+            .pago-container {
+                padding: 30px;
+            }
+            .pago-container img {
+                max-width: 300px; /* Reduce el tamaño del QR */
+            }
+            .pago-container p {
+                font-size: 18px; /* Reduce el tamaño del texto */
+            }
+            .monto {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 480px) { /* Móviles pequeños */
+            .pago-container {
+                padding: 20px;
+            }
+            .pago-container img {
+                max-width: 300px; /* Aún más pequeño para móviles */
+            }
+            .pago-container p {
+                font-size: 16px;
+            }
+            .monto {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pago-container">
+        <h1>Método de Pago</h1>
+        <img src="img/qr.webp" alt="Código QR de pago">
+        <p>Este es el modo que tiene que pagar: <br> Método unido de pago QR</p>
+        <p class="monto">Total a pagar: <span id="monto-total">$0</span></p>
+    </div>
+
+    <script>
+        // Obtener el total desde la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const total = urlParams.get('total') || 0;
+        document.getElementById('monto-total').textContent = `$${parseFloat(total).toFixed(2)}`;
+    </script>
+</body>
+</html>
