@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Pizzeria</title>
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <a href="#" class="logo">Mamma Mia</a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="img/menu.png" class="menu-icono"  alt="menup">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li> <a href="#">inicio</a></li>
+                    <li> <a href="#">producto</a></li>
+                    <li> <a href="#">contacto</a></li>
+                </ul>
+            </nav>
+            <div>
+                <ul>
+                    <li class="submenu">
+                        <img src="img/car.svg" id="img-carrito" alt="carrito">
+                        <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <th>
+                                        <th>imagen</th>
+                                        <th>nombre</th>
+                                        <th>precio</th>
+                                        <th></th>
+                                    </th>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <p id="total-carrito">Total: $0</p>
+                            <a href="#" id="vaciar-carrito" class="btn-2">Vaciar carrito</a>
+                            <a href="#" id="pagar-carrito" class="btn-2">Pagar</a>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="header-content container">
+            <div class="header-img">
+                <img src="img/right.webp" alt="oferta">
+            </div>
+            <div class="header-txt">
+                <h1>oferta limitada </h1>
+                <p>2 x 1 todos los viernes </p>
+                <a href="#" class="btn-1">ver oferta</a>
+            </div>
+        </div>
+
+    </header>
+    
+    <div class="oferta container">
+        <div class="oferta-1">
+            <div class="oferta-img">
+                <img src="img/pepperoni.webp" alt="pizza-oferta-1"> <!-- Imagen del menú -->
+            </div>
+            <div class="oferta-text">
+                <h3>Oferta especial</h3>
+                <button class="open-oferta-modal btn-2" data-oferta="1">Ver oferta</button>
+            </div>
+        </div>
+        <div class="oferta-1">
+            <div class="oferta-img">
+                <img src="img/hawaiana.webp" alt="pizza-oferta-2"> <!-- Imagen del menú -->
+            </div>
+            <div class="oferta-text">
+                <h3>Combo familiar</h3>
+                <button class="open-oferta-modal btn-2" data-oferta="2">Ver oferta</button>
+            </div>
+        </div>
+        <div class="oferta-1">
+            <div class="oferta-img">
+                <img src="img/mozzarella.webp" alt="pizza-oferta-3"> <!-- Imagen del menú -->
+            </div>
+            <div class="oferta-text">
+                <h3>Descuento del día</h3>
+                <button class="open-oferta-modal btn-2" data-oferta="3">Ver oferta</button>
+            </div>
+        </div>
+    
+        <!-- Modal para ofertas con productos del menú -->
+        <div id="oferta-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-oferta-modal">×</span>
+                <h3 id="oferta-title">Oferta</h3>
+                <div id="oferta-products">
+                    <!-- Oferta 1: Oferta especial -->
+                    <div class="oferta-product" data-oferta="1">
+                        <img src="img/pepperoni.webp" alt="Pepperoni">
+                        <h4>Pepperoni (Mediana)</h4>
+                        <p>$85</p> <!-- Descuento del precio original $100 -->
+                        <button class="add-oferta-btn" data-id="oferta-1-1">Agregar</button>
+                    </div>
+                    <div class="oferta-product" data-oferta="1" style="display: none;">
+                        <img src="img/hawaiana.webp" alt="Hawaiana">
+                        <h4>Hawaiana (Pequeña)</h4>
+                        <p>$65</p> <!-- Descuento del precio original $80 -->
+                        <button class="add-oferta-btn" data-id="oferta-1-2">Agregar</button>
+                    </div>
+    
+                    <!-- Oferta 2: Combo familiar -->
+                    <div class="oferta-product" data-oferta="2" style="display: none;">
+                        <img src="img/pepperoni.webp" alt="Pepperoni">
+                        <h4>Pepperoni (Grande)</h4>
+                        <p>$110</p> <!-- Descuento del precio original $120 -->
+                        <button class="add-oferta-btn" data-id="oferta-2-1">Agregar</button>
+                    </div>
+                    <div class="oferta-product" data-oferta="2" style="display: none;">
+                        <img src="img/mozzarella.webp" alt="Mozzarella">
+                        <h4>Mozzarella (Grande)</h4>
+                        <p>$100</p> <!-- Descuento del precio original $120 -->
+                        <button class="add-oferta-btn" data-id="oferta-2-2">Agregar</button>
+                    </div>
+    
+                    <!-- Oferta 3: Descuento del día -->
+                    <div class="oferta-product" data-oferta="3" style="display: none;">
+                        <img src="img/hawaiana.webp" alt="Hawaiana">
+                        <h4>Hawaiana (Mediana)</h4>
+                        <p>$80</p> <!-- Descuento del precio original $100 -->
+                        <button class="add-oferta-btn" data-id="oferta-3-1">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección para personalización (antes del menú) -->
+    <section class="custom-pizza container" id="custom-pizza-section">
+        <h2>Personaliza tu pizza</h2>
+        <div class="custom-content">
+            <div class="custom-item">
+                <div class="custom-image">
+                    <img src="img/pizza-personalizada.webp" alt="pizza-personalizada">
+                </div>
+                <div class="custom-details">
+                    <h3>Crea tu propia pizza</h3>
+                    <p>Elige tus ingredientes favoritos y disfruta de una pizza única hecha a tu gusto. ¡Personaliza el tamaño y los sabores como prefieras!</p>
+                    <p class="precio">Desde $80</p>
+                    <button class="open-custom-modal btn-2">Personalizar</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal para personalizar pizza -->
+        <div id="custom-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-custom-modal">×</span>
+                <h3>Personaliza tu pizza</h3>
+                <img src="img/pizza-personalizada.webp" alt="pizza-personalizada">
+                <p>Selecciona el tamaño:</p>
+                <select id="custom-size">
+                    <option value="pequeño" data-price="80">Pequeño - $80</option>
+                    <option value="mediano" data-price="100">Mediano - $100</option>
+                    <option value="grande" data-price="120">Grande - $120</option>
+                </select>
+                <p>Elige tus ingredientes (cada uno suma al precio):</p>
+                <div id="ingredients">
+                    <label><input type="checkbox" value="Pepperoni" data-price="10"> Pepperoni (+$10)</label><br>
+                    <label><input type="checkbox" value="Queso extra" data-price="8"> Queso extra (+$8)</label><br>
+                    <label><input type="checkbox" value="Champiñones" data-price="7"> Champiñones (+$7)</label><br>
+                    <label><input type="checkbox" value="Jamón" data-price="9"> Jamón (+$9)</label><br>
+                    <label><input type="checkbox" value="Piña" data-price="6"> Piña (+$6)</label><br>
+                </div>
+                <p>Total: <span id="custom-total">$80</span></p>
+                <button id="add-custom-to-cart" class="btn-2">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+
+<main class="products container" id="lista-1">
+    <h2>Productos - Menú</h2>
+    <div class="product-content">
+        <!-- Producto Pepperoni -->
+        <div class="product">
+            <img src="img/pepperoni.webp" alt="producto1">
+            <div class="product-txt">
+                <h3>Pepperoni</h3>
+                <p>Calidad premium</p>
+                <p class="precio">$100</p>
+                <button class="open-modal btn-2" data-id="1">Seleccionar</button>
+            </div>
+        </div>
+        <!-- Ejemplo Hawaiana -->
+        <div class="product">
+            <img src="img/hawaiana.webp" alt="producto2">
+            <div class="product-txt">
+                <h3>Hawaiana</h3>
+                <p>Calidad premium</p>
+                <p class="precio">$100</p>
+                <button class="open-modal btn-2" data-id="2">Seleccionar</button>
+            </div>
+        </div>
+        <!-- Repite para los demás productos -->
+
+        <div class="product">
+            <img src="img/hawaiana.webp" alt="producto2">
+            <div class="product-txt">
+                <h3>Hawaiana</h3>
+                <p>Calidad premium</p>
+                <p class="precio">75 bs</p>
+                <button class="open-modal btn-2" data-id="2">Seleccionar</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="img/napolitana.webp" alt="producto2">
+            <div class="product-txt">
+                <h3>napolitana</h3>
+                <p>Calidad premium</p>
+                <p class="precio">75 bs</p>
+                <button class="open-modal btn-2" data-id="2">Seleccionar</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="img/champiñones.webp" alt="producto2">
+            <div class="product-txt">
+                <h3>champiñones</h3>
+                <p>Calidad premium</p>
+                <p class="precio">75 bs</p>
+                <button class="open-modal btn-2" data-id="2">Seleccionar</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="img/Mozzarella.webp" alt="producto2">
+            <div class="product-txt">
+                <h3>mozzarella</h3>
+                <p>Calidad premium</p>
+                <p class="precio">75 bs</p>
+                <button class="open-modal btn-2" data-id="2">Seleccionar</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="img/rossini.webp" alt="producto2">
+            <div class="product-txt">
+                <h3>rossini</h3>
+                <p>Calidad premium</p>
+                <p class="precio">75 bs</p>
+                <button class="open-modal btn-2" data-id="2">Seleccionar</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="img/fugazzeta.webp" alt="producto2">
+            <div class="product-txt">
+                <h3>fugazzeta</h3>
+                <p>Calidad premium</p>
+                <p class="precio">75 bs</p>
+                <button class="open-modal btn-2" data-id="2">Seleccionar</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="img/charque.webp" alt="producto2">
+            <div class="product-txt">
+                <h3>charque</h3>
+                <p>Calidad premium</p>
+                <p class="precio">75 bs</p>
+                <button class="open-modal btn-2" data-id="2">Seleccionar</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="img/pestoypollo.webp" alt="producto2">
+            <div class="product-txt">
+                <h3>Hawaiana</h3>
+                <p>Calidad premium</p>
+                <p class="precio">75 bs</p>
+                <button class="open-modal btn-2" data-id="2">Seleccionar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para productos predefinidos -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modal-title"></h3>
+            <img id="modal-image" src="" alt="">
+            <p>Selecciona el tamaño:</p>
+            <select id="modal-size">
+                <option value="pequeño" data-price="80">Pequeño - $80</option>
+                <option value="mediano" data-price="100">Mediano - $100</option>
+                <option value="grande" data-price="120">Grande - $120</option>
+            </select>
+            <button id="add-to-cart" class="btn-2">Agregar al carrito</button>
+        </div>
+    </div>
+</main>
+    <section class="blog container">
+        <div class="blog-1">
+            <img src="img/poixxx1.jpg" alt="">
+            <h3>blog 1</h3>
+            <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores saepe natus illum iste quo ad facilis, impedit eum, inventore dicta modi temporibus soluta beatae rem numquam! Reiciendis doloribus natus veritatis!</p>
+
+        </div>
+        <div class="blog-1">
+            <img src="img/b2.jpg" alt="">
+            <h3>blog 1</h3>
+            <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores saepe natus illum iste quo ad facilis, impedit eum, inventore dicta modi temporibus soluta beatae rem numquam! Reiciendis doloribus natus veritatis!</p>
+
+        </div>
+        <div class="blog-1">
+            <img src="img/b3.jpg" alt="">
+            <h3>blog 1</h3>
+            <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores saepe natus illum iste quo ad facilis, impedit eum, inventore dicta modi temporibus soluta beatae rem numquam! Reiciendis doloribus natus veritatis!</p>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content container">
+            <div class="link">
+                <h3>lorem</h3>
+                <ul>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>lorem</h3>
+                <ul>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>lorem</h3>
+                <ul>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                </ul>
+            </div>
+            
+        </div>
+
+    </footer>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
