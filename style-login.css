@@ -30,10 +30,8 @@ body {
 .login-header {
     text-align: center;
     margin: 20px 0 40px 0;
-<<<<<<< HEAD
+
     text-transform: uppercase;
-=======
->>>>>>> e27b883cf76436c80cbd8125be662e8d653d2538
 }
 
 .login-header header {
@@ -129,13 +127,12 @@ a:hover {
     .login-header header {
         font-size: 25px;
     }
-<<<<<<< HEAD
+
 }
 
 
 
 
 
-=======
-}
->>>>>>> e27b883cf76436c80cbd8125be662e8d653d2538
+
+
