@@ -1,11 +1,15 @@
 const carrito = document.getElementById('carrito');
 const elementos1 = document.getElementById('lista-1');
+<<<<<<< HEAD
 const customSection = document.getElementById('custom-pizza-section');
+=======
+>>>>>>> e27b883cf76436c80cbd8125be662e8d653d2538
 const lista = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
 const pagarCarritoBtn = document.getElementById('pagar-carrito');
 const totalCarrito = document.getElementById('total-carrito');
 const modal = document.getElementById('modal');
+<<<<<<< HEAD
 const customModal = document.getElementById('custom-modal');
 const ofertaModal = document.getElementById('oferta-modal');
 const closeModal = document.querySelector('.close-modal');
@@ -20,17 +24,28 @@ const addCustomToCartBtn = document.getElementById('add-custom-to-cart');
 const customTotal = document.getElementById('custom-total');
 const ofertaTitle = document.getElementById('oferta-title');
 const ingredients = document.querySelectorAll('#ingredients input[type="checkbox"]');
+=======
+const closeModal = document.querySelector('.close-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalImage = document.getElementById('modal-image');
+const modalSize = document.getElementById('modal-size');
+const addToCartBtn = document.getElementById('add-to-cart');
+>>>>>>> e27b883cf76436c80cbd8125be662e8d653d2538
 
 cargarEventoListeners();
 
 function cargarEventoListeners() {
     elementos1.addEventListener('click', abrirModal);
+<<<<<<< HEAD
     customSection.addEventListener('click', abrirCustomModal);
     document.addEventListener('click', abrirOfertaModal);
+=======
+>>>>>>> e27b883cf76436c80cbd8125be662e8d653d2538
     carrito.addEventListener('click', eliminarElemento);
     vaciarCarritoBtn.addEventListener('click', vaciarCarritoFn);
     pagarCarritoBtn.addEventListener('click', pagarCarritoFn);
     closeModal.addEventListener('click', cerrarModal);
+<<<<<<< HEAD
     closeCustomModal.addEventListener('click', cerrarCustomModal);
     closeOfertaModal.addEventListener('click', cerrarOfertaModal);
     addToCartBtn.addEventListener('click', agregarAlCarrito);
@@ -43,6 +58,12 @@ function cargarEventoListeners() {
     });
     customSize.addEventListener('change', actualizarCustomTotal);
     ingredients.forEach(ing => ing.addEventListener('change', actualizarCustomTotal));
+=======
+    addToCartBtn.addEventListener('click', agregarAlCarrito);
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) cerrarModal();
+    });
+>>>>>>> e27b883cf76436c80cbd8125be662e8d653d2538
 }
 
 function abrirModal(e) {
@@ -54,6 +75,7 @@ function abrirModal(e) {
 
         modalTitle.textContent = titulo;
         modalImage.src = imagen;
+<<<<<<< HEAD
         modal.dataset.id = id;
         modal.style.display = 'block';
     }
@@ -80,6 +102,10 @@ function abrirOfertaModal(e) {
         });
 
         ofertaModal.style.display = 'block';
+=======
+        modal.dataset.id = id; // Guardamos el ID en el modal
+        modal.style.display = 'block'; // Mostramos el modal
+>>>>>>> e27b883cf76436c80cbd8125be662e8d653d2538
     }
 }
 
@@ -87,6 +113,7 @@ function cerrarModal() {
     modal.style.display = 'none';
 }
 
+<<<<<<< HEAD
 function cerrarCustomModal() {
     customModal.style.display = 'none';
 }
@@ -95,12 +122,18 @@ function cerrarOfertaModal() {
     ofertaModal.style.display = 'none';
 }
 
+=======
+>>>>>>> e27b883cf76436c80cbd8125be662e8d653d2538
 function agregarAlCarrito() {
     const tamaño = modalSize.value;
     const precio = modalSize.options[modalSize.selectedIndex].getAttribute('data-price');
     const infoElemento = {
         imagen: modalImage.src,
+<<<<<<< HEAD
         titulo: `${modalTitle.textContent} (${tamaño})`,
+=======
+        titulo: `${modalTitle.textContent} (${tamaño})`, // Incluye el tamaño en el título
+>>>>>>> e27b883cf76436c80cbd8125be662e8d653d2538
         precio: `$${precio}`,
         id: modal.dataset.id
     };
@@ -108,6 +141,7 @@ function agregarAlCarrito() {
     cerrarModal();
 }
 
+<<<<<<< HEAD
 function agregarCustomAlCarrito() {
     const tamaño = customSize.value;
     const precioBase = parseFloat(customSize.options[customSize.selectedIndex].getAttribute('data-price'));
@@ -149,6 +183,8 @@ function agregarOfertaAlCarrito(e) {
     }
 }
 
+=======
+>>>>>>> e27b883cf76436c80cbd8125be662e8d653d2538
 function insertarCarrito(elemento) {
     const row = document.createElement('tr');
     row.innerHTML = `
@@ -203,6 +239,7 @@ function actualizarTotal() {
         total += precio;
     }
     totalCarrito.textContent = `Total: $${total.toFixed(2)}`;
+<<<<<<< HEAD
 }
 
 function actualizarCustomTotal() {
@@ -215,4 +252,6 @@ function actualizarCustomTotal() {
     });
     const total = precioBase + precioIngredientes;
     customTotal.textContent = `$${total}`;
+=======
+>>>>>>> e27b883cf76436c80cbd8125be662e8d653d2538
 }
